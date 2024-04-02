@@ -34,11 +34,11 @@ from numpy import (
 )
 
 dict_bin_operation_fn = {
-	'**'		: lambda z_1, z_2 : z_1 ** z_2,
-	'*'			: lambda z_1, z_2 : z_1 * z_2,
-	'/'			: lambda z_1, z_2 : z_1 / z_2,
 	'+'			: lambda z_1, z_2 : z_1 + z_2,
 	'-'			: lambda z_1, z_2 : z_1 - z_2,
+	'*'			: lambda z_1, z_2 : z_1 * z_2,
+	'/'			: lambda z_1, z_2 : z_1 / z_2,
+	'**'		: lambda z_1, z_2 : z_1 ** z_2,
 }
 
 dict_una_operation_fn = {
