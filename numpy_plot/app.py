@@ -18,6 +18,13 @@ class App:
 		self.plot_fig()
 
 	def set_title(self):
+		st.set_page_config(
+			page_title='Surface Plot', 
+			page_icon='🏔️', 
+			layout='centered', 
+			initial_sidebar_state='auto'
+		)
+
 		st.title('Numpy Surface Plot')
 
 	def set_sidebar_weight(self):
