@@ -1,2 +1,2 @@
-import streamlit as st
-st.title('Numpy Plot')
+from numpy_plot import App
+App()
