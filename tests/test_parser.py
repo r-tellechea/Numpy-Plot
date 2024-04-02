@@ -55,4 +55,4 @@ def test_default_expression():
 	y = np.linspace(-10.0, 10.0, 1000).reshape((1, -1))
 	z = parse('(x + y) / (2 + cos(x) * sin(y))', x, y)
 	z_calc = (x + y) / (2 + np.cos(x) * np.sin(y))
-	assert (z - z_calc < 1e9).all()
+	assert (np.abs(z - z_calc) < 1e9).all()
