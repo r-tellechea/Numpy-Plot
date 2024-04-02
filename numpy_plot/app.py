@@ -18,7 +18,7 @@ class App:
 		self.plot_fig()
 
 	def set_title(self):
-		st.title('Numpy Plot')
+		st.title('Numpy Surface Plot')
 
 	def set_sidebar_weight(self):
 		st.markdown(
