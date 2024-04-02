@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_pills import pills
 import plotly.graph_objects as go
 
-from numpy_plot import dict_color_scale
+from numpy_plot import dict_color_scale, parse, ParseError
 
 class App:
 	def __init__(self):
@@ -94,7 +94,11 @@ class App:
 		x = self.x_axis.reshape((-1, 1))
 		y = self.y_axis.reshape((1, -1))
 
-		self.z = (x + y) / (2 + np.cos(x) * np.sin(y))
+		self.z = parse(self.z_expression, x, y)
+		if isinstance(self.z, ParseError):
+			st.sidebar.error(icon='🚫', body=self.z.message)
+		elif self.z.shape != (1000, 1000):
+			st.sidebar.error('Invalid expression.')
 
 	def compute_fig(self):
 		self.fig = go.Figure(go.Surface(
