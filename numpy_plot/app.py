@@ -27,6 +27,8 @@ class App:
 
 		st.title('Numpy Surface Plot')
 
+		st.info('App in development. Many formulas will cause errors.', icon='🤖')
+
 	def set_sidebar_weight(self):
 		st.markdown(
 			'''
